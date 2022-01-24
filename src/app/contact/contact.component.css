@@ -1,0 +1,26 @@
+form {
+  background-color: #560a86;
+  width:50%;
+  margin:0 auto;
+  padding:auto;
+  justify-content: center;
+  padding:10px;
+}
+
+#comment {
+  width:100%;
+}
+
+#form-header {
+  margin: auto;
+  padding:auto;
+  justify-content: center;
+  font-weight: bold;
+  width: 50%;
+  background-color:white;
+}
+
+.text-light {
+  border: 1px solid #fe53bb;
+  padding: 5px;
+}

@@ -1,0 +1,80 @@
+
+<!--https://formspree.io/f/xdoyqpza-->
+
+<form
+  novalidate
+  action="https://formspree.io/f/xdoyqpza"
+  method="POST"
+  #contactForm="ngForm"
+  ngSubmit="onSubmit(contactForm.value)"
+  class="rounded">
+
+  <div id="form-header">
+    <p>Let's get in touch</p>
+  </div>
+  <div class="text-light rounded">
+    <p>Need anything built, want to work together or simply want to have a chat?
+      Drop me an e-mail at irvenehawks@gmail.com or simply fill out the form
+      below and I will reply to you soon!
+    </p>
+  </div>
+  <div class="form-group">
+    <label for="firstName">
+
+    </label>
+    <input
+      type="text"
+      required
+      name="firstName"
+      id="firstName"
+      ngModel #firstName="ngModel"
+      (change)="log(firstName)"
+      ngModel class="form-control"
+      placeholder="Enter your name and surname"
+    />
+  </div>
+
+  <!--Error message for name field required-->
+  <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+    <div *ngIf="firstName.errors?.required">Name and surname is required.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="surName">
+
+    </label>
+    <input required
+    ngModel name="email"
+    name="email"
+    id="email"
+    #email="ngModel"
+    (change)="log(email)"
+    type="email"
+    ngModel class="form-control"
+    placeholder="Enter your email">
+  </div>
+
+
+
+  <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+    <div *ngIf="email.errors?.required">Email field can not be empty.</div>
+  </div>
+
+  <div class="form-group">
+    <label for="comment">
+
+    </label>
+    <textarea
+      required
+      maxlength="200"
+      ngModel name="message"
+      name="message"
+      id="message"
+      #message="ngModel"
+      (change)="log(message)"
+      class="container"cols="18" rows="04" class="form control"
+      placeholder="Type your message here...">
+    </textarea>
+  </div>
+  <input [disabled]="contactForm.invalid" type="submit" name="submit" class="btn btn-primary" value="Submit"/>
+</form>
